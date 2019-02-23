@@ -3,7 +3,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 import unittest
 from dp.stock import Stock
 
-class TestLetterCombinations(unittest.TestCase):
+class TestStock(unittest.TestCase):
     def setUp(self):
         self.func = Stock()
 

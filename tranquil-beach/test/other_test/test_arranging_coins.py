@@ -3,7 +3,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 import unittest
 from other.arranging_coins import Coins
 
-class TestLetterCombinations(unittest.TestCase):
+class TestCoins(unittest.TestCase):
     def setUp(self):
         self.func = Coins()
 

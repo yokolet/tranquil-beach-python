@@ -3,7 +3,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 import unittest
 from dp.coin_patterns import CoinPatterns
 
-class TestLetterCombinations(unittest.TestCase):
+class TestCoinPatterns(unittest.TestCase):
     def setUp(self):
         self.func = CoinPatterns()
 

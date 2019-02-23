@@ -3,7 +3,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 import unittest
 from dp.stairs import Stairs
 
-class TestLetterCombinations(unittest.TestCase):
+class TestStairs(unittest.TestCase):
     def setUp(self):
         self.func = Stairs()
 

@@ -3,7 +3,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 import unittest
 from dp.min_coin_change import MinCoinChange
 
-class TestLetterCombinations(unittest.TestCase):
+class TestMinCoinChange(unittest.TestCase):
     def setUp(self):
         self.func = MinCoinChange()
 

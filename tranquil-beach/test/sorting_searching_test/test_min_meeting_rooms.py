@@ -4,7 +4,7 @@ import unittest
 from sorting_searching.interval import Interval
 from sorting_searching.min_meeting_rooms import MinRooms
 
-class TestLetterCombinations(unittest.TestCase):
+class TestMinRooms(unittest.TestCase):
     def setUp(self):
         self.func = MinRooms()
 
