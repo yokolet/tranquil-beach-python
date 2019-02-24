@@ -3,7 +3,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 import unittest
 from dp.lis import LIS
 
-class TestCoinPatterns(unittest.TestCase):
+class TestLIS(unittest.TestCase):
     def setUp(self):
         self.func = LIS()
 
