@@ -11,14 +11,12 @@ class TestReverseLinkedList(unittest.TestCase):
     def test_1(self):
         # Input: 1->2->3->4->5->NULL
         # Output: 5->4->3->2->1->NULL
-        head = ListNode(1)
-        head.next = ListNode(2)
-        head.next.next = ListNode(3)
-        head.next.next.next = ListNode(4)
-        head.next.next.next.next = ListNode(5)
+        head = ListNode.build([1, 2, 3, 4, 5])
+        expected = '5 -> 4 -> 3 -> 2 -> 1'
         result = self.func.reverseList(head)
         self.assertEqual(result.val, 5)
         self.assertEqual(result.next.val, 4)
+        self.assertEqual(ListNode.stringify(result), expected)
 
 if __name__ == '__main__':
     unittest.main()
