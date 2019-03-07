@@ -3,4 +3,3 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
-  
