@@ -1,11 +1,11 @@
 import os, sys
 sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 import unittest
-from sorting_searching.range import Range
+from sorting_searching.min_range import MinRange
 
 class TestRange(unittest.TestCase):
     def setUp(self):
-        self.func = Range()
+        self.func = MinRange()
 
     def test_1(self):
         nums = [[4,10,15,24,26], [0,9,12,20], [5,18,22,30]]

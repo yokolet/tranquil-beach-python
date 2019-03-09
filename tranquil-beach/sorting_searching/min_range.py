@@ -1,7 +1,7 @@
 import heapq
 from collections import defaultdict
 
-class Range:
+class MinRange:
     def smallestRange(self, nums):
         """
         :type nums: List[List[int]]
