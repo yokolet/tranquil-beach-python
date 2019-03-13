@@ -3,7 +3,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 import unittest
 from design.word_dictionary import WordDictionary
 
-class TestSubsets(unittest.TestCase):
+class TestWordDictionary(unittest.TestCase):
     def test_1(self):
         ops = ["WordDictionary","addWord","addWord","addWord","search","search","search","search"]
         params = [[],["bad"],["dad"],["mad"],["pad"],["bad"],[".ad"],["b.."]]
