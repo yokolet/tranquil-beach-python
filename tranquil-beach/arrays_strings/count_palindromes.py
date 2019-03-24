@@ -1,19 +1,19 @@
 class CountPalindromes:
     def countSubstrings(self, s: 'str') -> 'int':
         if not s: return 0
-        result, center = 0, 0
-        while center < len(s):
-            right = center + 1
-            while right < len(s) and s[right] == s[center]:
+        result, left = 0, 0
+        while left < len(s):
+            right = left + 1
+            while right < len(s) and s[left] == s[right]:
                 right += 1
-            result += (right-center) * (right-center+1) // 2
-            l = center - 1
+            result += (right-left) * (right-left+1) // 2
+            l = left - 1
             r = right
             while l >= 0 and r < len(s) and s[l] == s[r]:
                 l -= 1
                 r += 1
                 result += 1
-            center = right
+            left = right
         return result
 
     def countSubstrings3(self, s: str) -> int:
