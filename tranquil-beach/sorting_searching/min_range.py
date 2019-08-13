@@ -2,7 +2,7 @@ import heapq
 from collections import defaultdict
 
 class MinRange:
-    def smallestRange(self, nums):
+    def smallestRange3(self, nums):
         """
         :type nums: List[List[int]]
         :rtype: List[int]
@@ -30,23 +30,23 @@ class MinRange:
                 start += 1
         return min_range
 
-    def smallestRange3(self, nums):
+    def smallestRange(self, nums):
         """
         :type nums: List[List[int]]
         :rtype: List[int]
         """
         queue = [(nums[i][0], i, 0) for i in range(len(nums))]
         heapq.heapify(queue)
-        max_val = max(queue, key=lambda x: x[0])[0]
+        max_v = max(queue)[0]
         min_range = [float('-inf'), float('inf')]
         while queue:
-            min_val, i, j = heapq.heappop(queue)
-            if max_val - min_val < min_range[1] - min_range[0]:
-                min_range = [min_val, max_val]
-            if j + 1 == len(nums[i]):
+            min_v, i, j = heapq.heappop(queue)
+            if max_v - min_v < min_range[1] - min_range[0]:
+                min_range = [min_v, max_v]
+            if j == len(nums[i]) - 1:
                 return min_range
             v = nums[i][j + 1]
-            max_val = max(max_val, v)
+            max_v = max(max_v, v)
             heapq.heappush(queue, (v, i, j + 1))
 
     def smallestRange2(self, nums: 'List[List[int]]') -> 'List[int]':
