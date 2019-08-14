@@ -18,5 +18,17 @@ class TestExclusiveTime(unittest.TestCase):
         expected = [3, 4]
         self.assertEqual(self.func.exclusiveTime(n, logs), expected)
 
+    def test_2(self):
+        n = 3
+        logs = ["0:start:0","0:end:0","1:start:1","1:end:1","2:start:2","2:end:2","2:start:3","2:end:3"]
+        expected = [1, 1, 2]
+        self.assertEqual(self.func.exclusiveTime(n, logs), expected)
+
+    def test_3(self):
+        n = 1
+        logs = ["0:start:0","0:start:2","0:end:5","0:start:6","0:end:6","0:end:7"]
+        expected = [8]
+        self.assertEqual(self.func.exclusiveTime(n, logs), expected)
+
 if __name__ == '__main__':
     unittest.main()
