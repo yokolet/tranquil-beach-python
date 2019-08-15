@@ -12,5 +12,25 @@ class TestMinWindow(unittest.TestCase):
         expected = "BANC"
         self.assertEqual(self.func.minWindow(s, t), expected)
 
+    def test_2(self):
+        s, t = 'ab', 'b'
+        expected = 'b'
+        self.assertEqual(self.func.minWindow(s, t), expected)
+
+    def test_3(self):
+        s, t = "a", "aa"
+        expected = ''
+        self.assertEqual(self.func.minWindow(s, t), expected)
+
+    def test_4(self):
+        s, t = "a", "b"
+        expected = ''
+        self.assertEqual(self.func.minWindow(s, t), expected)
+
+    def test_5(self):
+        s, t = "acbbaca", "aba"
+        expected = "baca"
+        self.assertEqual(self.func.minWindow(s, t), expected)
+
 if __name__ == '__main__':
     unittest.main()
