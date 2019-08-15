@@ -1,10 +1,5 @@
 class MinSubarraySum:
-    def minSubArrayLen(self, s, nums):
-        """
-        :type s: int
-        :type nums: List[int]
-        :rtype: int
-        """
+    def minSubArrayLen(self, s: int, nums: 'List[int]') -> int:
         n = len(nums)
         if n == 0 or (n == 1 and nums[0] < s): return 0
         acc, left, min_len = 0, 0, n + 1
