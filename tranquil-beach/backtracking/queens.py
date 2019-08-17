@@ -5,11 +5,13 @@ class Queens:
 
         def placeQueens():
             if len(queens) == n:
+                # base case, all queens could be placed
                 board = [['.' for i in range(n)] for j in range(n)]
                 for r, c in enumerate(queens):
                     board[r][c] = 'Q'
                 result.append([''.join(row) for row in board])
 
+            # row r will be saved in index r
             r = len(queens)
             for c in range(n):
                 if r not in rows and c not in cols and\
