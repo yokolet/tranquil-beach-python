@@ -4,7 +4,7 @@ from tree.tree_node import TreeNode
 
 class SerializeDeserialize:
     def serialize(self, root: TreeNode) -> str:
-        if not root: return ''
+        if not root: return '[]'
         result, queue = [], [root]
         while queue:
             cur = queue.pop(0)
@@ -14,20 +14,20 @@ class SerializeDeserialize:
                 queue.append(cur.right)
         while result[-1] and result[-1] == 'null':
             result.pop()
-        return ','.join(result)
+        return  '[' + ','.join(result) + ']'
 
     def deserialize(self, data: str) -> TreeNode:
-        if not data or data == '': return None
-        data = data.split(',')
-        root = TreeNode(data[0])
+        if not data or data == '[]': return None
+        data = data[1:-1].split(',')
+        root = TreeNode(int(data[0]))
         idx, queue = 0, [root]
         while queue:
             cur = queue.pop(0)
             if idx*2+1 < len(data) and data[idx*2+1] != 'null':
-                cur.left = TreeNode(data[idx*2+1])
+                cur.left = TreeNode(int(data[idx*2+1]))
                 queue.append(cur.left)
             if idx*2+2 < len(data) and data[idx*2+2] != 'null':
-                cur.right = TreeNode(data[idx*2+2])
+                cur.right = TreeNode(int(data[idx*2+2]))
                 queue.append(cur.right)
             idx += 1
         return root
