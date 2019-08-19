@@ -1,18 +1,11 @@
-from functools import reduce
-import copy
-
 class NumMatrix:
-
     def __init__(self, matrix: 'List[List[int]]'):
         def sum_matrix():
-            m = len(matrix)
-            n = len(matrix[0]) if matrix else 0
-            
+            m, n = len(matrix), len(matrix[0]) if matrix else 0
             result = [[0] * (n + 1) for _ in range(m + 1)]
             for i in range(m):
                 for j in range(n):
                     result[i + 1][j + 1] = result[i][j + 1] + result[i + 1][j] - result[i][j] + matrix[i][j]
-            print(result)
             return result
         self.acc_sum = sum_matrix()
 
