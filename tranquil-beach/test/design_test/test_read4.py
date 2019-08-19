@@ -48,5 +48,24 @@ class TestRead4(unittest.TestCase):
         self.assertEqual(func.read(buf, 1), 0)
         self.assertEqual(''.join(buf), '')
 
+    def test_2(self):
+        it = iter("abc")
+        def read4(buf):
+            index = 0
+            try:
+                while index < 4:
+                    buf[index] = next(it)
+                    index += 1
+            except StopIteration:
+                pass
+            return index
+        func = Read4(read4)
+        buf = ['']
+        self.assertEqual(func.read(buf, 4), 3)
+        self.assertEqual(''.join(buf), 'abc')
+        buf = ['']*2
+        self.assertEqual(func.read(buf, 1), 0)
+        self.assertEqual(''.join(buf), '')
+
 if __name__ == '__main__':
     unittest.main()
