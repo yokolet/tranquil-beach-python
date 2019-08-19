@@ -1,7 +1,15 @@
 import string, re
 
 class ValidPalindrome:
-    def isPalindrome(self, s):
+    def isPalindrome(self, s: str) -> bool:
+        ignore_chars = ',./<>?;\':"[]\{}|`~!@#$%^&*()-=_+ '
+        s = s.lower()
+        for char in ignore_chars:
+            if char in s:
+                s = s.replace(char,'')
+        return s == s[::-1]
+
+    def isPalindrome1(self, s):
         """
         :type s: str
         :rtype: bool
@@ -20,3 +28,4 @@ class ValidPalindrome:
         s = ''.join([c if p.match(c) else '' for c in s.lower()])
         return s == s[::-1]
 
+    
