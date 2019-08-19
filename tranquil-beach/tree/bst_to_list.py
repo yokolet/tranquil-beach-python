@@ -1,11 +1,7 @@
 from .tree_node import TreeNode
 
 class BSTToList:
-    def treeToDoublyList(self, root):
-        """
-        :type root: Node
-        :rtype: Node
-        """
+    def treeToDoublyList(self, root: TreeNode) -> TreeNode:
         def walk(root):
             if not root: return None, None
             if (not root.left) and (not root.right): return root, root
@@ -27,11 +23,7 @@ class BSTToList:
         if right: right.right = left
         return left
 
-    def treeToDoublyList2(self, root):
-        """
-        :type root: Node
-        :rtype: Node
-        """
+    def treeToDoublyList2(self, root: TreeNode) -> TreeNode:
         if not root: return None
         cur, first, pre = root, None, None
         while cur:
