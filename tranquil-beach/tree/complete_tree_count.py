@@ -8,12 +8,12 @@ class CompleteTreeCount:
             if not root: return 0
             return 1 + height(root.left)
         
-        l_h = height(root)
-        r_h = 1 + height(root.right)
+        l_h = height(root.left)
+        r_h = height(root.right)
         if l_h == r_h:
-            return 2 ** (l_h - 1) + self.countNodes(root.right)
+            return 2 ** l_h + self.countNodes(root.right)
         else:
-            return 2 ** (r_h - 1) + self.countNodes(root.left)
+            return 2 ** r_h + self.countNodes(root.left)
 
     def countNodes2(self, root: TreeNode) -> int:
         if not root: return 0
