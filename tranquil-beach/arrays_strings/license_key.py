@@ -1,10 +1,10 @@
 class LicenseKey:
     def licenseKeyFormatting(self, S: str, K: int) -> str:
-        S = "".join(S.upper().split('-'))[::-1]
+        S = ''.join(S.upper().split('-'))[::-1]
         result = []
         for i in range(0, len(S), K):
             result.append(S[i:i+K])
-        return "-".join(result)[::-1]
+        return '-'.join(result)[::-1]
 
     def licenseKeyFormatting2(self, S: str, K: int) -> str:
         result = ''

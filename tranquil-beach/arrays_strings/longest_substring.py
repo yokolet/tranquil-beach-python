@@ -1,12 +1,12 @@
 class LongestSubstring:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        left, max_length, memo = 0, 0, {} # char to index map
+        left, max_len, memo = 0, 0, {} # char to index map
         for i in range(len(s)):
             if s[i] in memo:
                 left = max(left, memo[s[i]])    
-            max_length = max(max_length, i - left + 1)
+            max_len = max(max_len, i - left + 1)
             memo[s[i]] = i + 1
-        return max_length
+        return max_len
 
     def lengthOfLongestSubstring2(self, s: 'str') -> 'int':
         curr_substring = ''

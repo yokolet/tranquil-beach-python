@@ -1,6 +1,6 @@
 class Compression:
     def countAndSay(self, n: int) -> str:
-        if n == 1: return "1"
+        if n == 1: return '1'
         cur, prev = '', '1'
         for _ in range(n-1):
             count, p = 0, prev[0]
