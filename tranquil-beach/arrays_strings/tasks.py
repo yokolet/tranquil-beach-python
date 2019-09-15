@@ -3,14 +3,14 @@ from collections import Counter
 class Tasks:
     def leastInterval(self, tasks: 'List[str]', n: int) -> int:
         counts = Counter(tasks).most_common()
-        maxCounts, sameCounts = counts[0][1], 0
+        max_counts, same_counts = counts[0][1], 0
         for _, v in counts:
-            if v == maxCounts:
-                sameCounts += 1
+            if v == max_counts:
+                same_counts += 1
             else:
                 break
-        intervals = maxCounts * sameCounts
-        intervals += (maxCounts - 1) * (n - (sameCounts - 1)) # between
+        intervals = max_counts * same_counts
+        intervals += (max_counts - 1) * (n - (same_counts - 1)) # between
         return max(len(tasks), intervals)
 
     def leastInterval2(self, tasks, n):
