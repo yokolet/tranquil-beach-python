@@ -1,7 +1,6 @@
 class Monotonic:
     def isMonotonic(self, A: 'List[int]') -> bool:
-        if A[0] <= A[-1]: factor = 1
-        else: factor = -1
+        factor = 1 if A[0] <= A[-1] else -1
         prev = A[0]
         for cur in A[1:]:
             if (cur - prev)*factor < 0:

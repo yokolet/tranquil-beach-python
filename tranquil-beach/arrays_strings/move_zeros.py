@@ -1,8 +1,7 @@
 class MoveZeros:
-    def moveZeroes(self, nums):
+    def moveZeroes(self, nums: List[int]) -> None:
         """
-        :type nums: List[int]
-        :rtype: void Do not return anything, modify nums in-place instead.
+        Do not return anything, modify nums in-place instead.
         """
         zero = 0
         for i in range(len(nums)):
