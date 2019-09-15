@@ -1,9 +1,5 @@
 class ValidParentheses:
-    def isValid(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
+    def isValid(self, s: str) -> bool:
         stack = []
         pairs = {
             ')': '(',

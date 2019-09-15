@@ -1,9 +1,5 @@
 class Product:
-    def productExceptSelf(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+    def productExceptSelf(self, nums: 'List[int]') -> 'List[int]':
         if not nums: return []
         acc, result = 1, []
         for n in nums:
