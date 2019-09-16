@@ -1,7 +1,13 @@
 from .list_node import ListNode
 
 class ReverseLinkedList:
-    def reverseList(self, head):
+    def reverseList(self, head: ListNode) -> ListNode:
+        cur, rev = head, None
+        while cur:
+            rev, rev.next, cur = cur, rev, cur.next
+        return rev
+
+    def reverseList2(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
