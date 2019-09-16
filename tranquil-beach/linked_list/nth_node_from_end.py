@@ -1,20 +1,15 @@
 from .list_node import ListNode
 
 class NthNodeFromEnd:
-    def removeNthFromEnd(self, head, n):
-        """
-        :type head: ListNode
-        :type n: int
-        :rtype: ListNode
-        """
-        root = ListNode(None)
-        root.next = head
-        fast = root
+    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        dummy = ListNode(None)
+        dummy.next = head
+        fast = dummy
         for _ in range(n):
             fast = fast.next
-        cur = root
+        cur = dummy
         while fast.next:
             fast = fast.next
             cur = cur.next
         cur.next = cur.next.next
-        return root.next
+        return dummy.next
