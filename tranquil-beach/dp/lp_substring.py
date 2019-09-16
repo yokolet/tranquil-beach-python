@@ -1,19 +1,15 @@
 class LongestPalindromicSubstring:
-    def longestPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
-        if not s: return ""
-        max_length = 1
+    def longestPalindrome(self, s: str) -> str:
+        if not s: return ''
+        max_len = 1
         start = 0
         for i in range(len(s)):
-            if i - max_length >= 1 and\
-                s[i-max_length-1:i+1] == s[i-max_length-1:i+1][::-1]:
-                start = i - max_length - 1
-                max_length += 2
-            elif i - max_length >= 0 and\
-                s[i-max_length:i+1] == s[i-max_length:i+1][::-1]:
-                start = i - max_length
-                max_length += 1
-        return s[start:start+max_length]
+            if i - max_len >= 1 and\
+                s[i-max_len-1:i+1] == s[i-max_len-1:i+1][::-1]:
+                start = i - max_len - 1
+                max_len += 2
+            elif i - max_len >= 0 and\
+                s[i-max_len:i+1] == s[i-max_len:i+1][::-1]:
+                start = i - max_len
+                max_len += 1
+        return s[start:start+max_len]
