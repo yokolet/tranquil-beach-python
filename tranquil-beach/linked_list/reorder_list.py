@@ -9,6 +9,21 @@ class ReorderList:
         slow, fast = head, head
         while fast and fast.next: # find half point
             slow, fast = slow.next, fast.next.next
+        slow.next, slow, rev = None, slow.next, None
+        while slow:
+            rev, rev.next, slow = slow, rev, slow.next
+        cur = head
+        while head and rev:
+            head.next, rev.next, head, rev = rev, head.next, head.next, rev.next
+
+    def reorderList2(self, head: ListNode) -> None:
+        """
+        Do not return anything, modify head in-place instead.
+        """
+        if not head: return
+        slow, fast = head, head
+        while fast and fast.next: # find half point
+            slow, fast = slow.next, fast.next.next
         rev, cur, tmp = None, slow.next, None
         slow.next = None
         while cur: # reverse last half
