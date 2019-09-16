@@ -1,12 +1,7 @@
 from collections import defaultdict
 
 class TwoArrays:
-    def intersect(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
+    def intersect(self, nums1: 'List[int]', nums2: 'List[int]') -> 'List[int]':
         memo, result = defaultdict(int), []
         if len(nums2) > len(nums1):
             nums1, nums2 = nums2, nums1

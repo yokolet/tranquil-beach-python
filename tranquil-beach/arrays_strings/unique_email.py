@@ -4,7 +4,7 @@ class UniqueEmail:
     def numUniqueEmails(self, emails: 'List[str]') -> int:
         seen = set()
         for email in emails:
-            local, domain = email.split("@")
+            local, domain = email.split('@')
             name = local.split('+')[0]
             name = name.replace('.', '')
             seen.add('@'.join([name, domain]))
