@@ -4,7 +4,7 @@ class OddEvenJump:
     def oddEvenJumps(self, A: 'List[int]') -> 'int':
         n = len(A)
 
-        def makeStack(indices):
+        def makeNext(indices):
             result = [None for _ in range(len(indices))]
             stack = []
             for i in indices:
@@ -13,10 +13,11 @@ class OddEvenJump:
                 stack.append(i)
             return result
 
-        sorted_indices = sorted(range(n), key = lambda i: A[i])
-        next_odd = makeStack(sorted_indices)
-        sorted_indices.sort(key = lambda i: A[i], reverse = True)
-        next_even = makeStack(sorted_indices)
+        a = [(v, i) for i, v in enumerate(A)]
+        indices = [i for _, i in sorted(a, key=lambda x: x[0])]
+        next_odd = makeNext(indices)
+        indices = [i for _, i in sorted(a, key=lambda x: x[0], reverse=True)]
+        next_even = makeNext(indices)
 
         odds, evens = [False for _ in range(n)], [False for _ in range(n)]
         odds[-1], evens[-1] = True, True
