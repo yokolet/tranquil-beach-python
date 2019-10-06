@@ -1,8 +1,10 @@
 class LargestNumber:
     def largestNumber(self, nums: 'List[int]') -> str:
+
         class Comparator(str):
-            def __lt__(x, y):
-                return x+y > y+x
+            def __lt__(self, o):
+                return self+o > o+self
+
         strs = sorted(map(str, nums), key=Comparator)
         return str(int(''.join(strs)))
 
