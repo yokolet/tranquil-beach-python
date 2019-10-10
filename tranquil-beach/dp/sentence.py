@@ -1,9 +1,7 @@
 class Sentence:
     def wordsTyping(self, sentence: 'List[str]', rows: int, cols: int) -> int:
         words = ' '.join(sentence) + ' '
-        n = len(words)
-
-        start = -1
+        start, n = -1, len(words)
         memo = [0 for _ in range(n)]
         for i in range(n):
             if words[i] == ' ':
