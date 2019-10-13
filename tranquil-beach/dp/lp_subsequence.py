@@ -2,9 +2,9 @@ class LongestPalindromicSubsequence:
     def longestPalindromeSubseq(self, s: str) -> int:
         n = len(s)
         if s == s[::-1]: return n
-        prev = [0] * n
+        prev = [0 for _ in range(n)]
         for i in range(n-1, -1, -1):
-            cur = [0] * n
+            cur = [0 for _ in range(n)]
             cur[i] = 1
             for l in range(i+1, n):
                 if s[i] == s[l]:
