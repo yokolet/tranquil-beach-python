@@ -17,5 +17,15 @@ class TestLongestSubstringKDistinct(unittest.TestCase):
         expected = 2
         self.assertEquals(expected, self.func(s, k))
 
+    def test_3(self):
+        s, k = 'ZZCBCAAAABB', 2
+        expected = 6
+        self.assertEquals(expected, self.func(s, k))
+
+    def test_4(self):
+        s, k = 'ZZCBCAAAABB', 3
+        expected = 9
+        self.assertEquals(expected, self.func(s, k))
+
 if __name__ == '__main__':
     unittest.main()
