@@ -1,7 +1,7 @@
 import os, sys
 sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 import unittest
-from dp.stock import Stock
+from arrays_strings.stock import Stock
 
 class TestStock(unittest.TestCase):
     def setUp(self):
