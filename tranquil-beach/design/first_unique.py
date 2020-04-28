@@ -10,7 +10,6 @@ class FirstUnique:
         for k in list(self.n_dict.keys()):
             if self.n_dict[k] > 1:
                 self.n_dict.pop(k)
-        print('class creates')
 
     def showFirstUnique(self) -> int:
         return next(iter(self.n_dict)) if self.n_dict else -1
